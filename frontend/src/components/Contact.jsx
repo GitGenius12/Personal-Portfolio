@@ -63,11 +63,11 @@ const Contact = ({ personalInfo }) => {
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
               Get In Touch
             </h2>
             <div className="w-16 h-0.5 bg-gray-700 mb-4"></div>
-            <p className="text-gray-500 text-lg">Feel free to reach out for collaborations or just a friendly chat</p>
+            <p className="text-gray-500 text-sm sm:text-base md:text-lg">Feel free to reach out for collaborations or just a friendly chat</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">

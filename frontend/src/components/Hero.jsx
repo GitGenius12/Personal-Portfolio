@@ -23,13 +23,13 @@ const Hero = ({ personalInfo }) => {
 
           {/* Main Content */}
           <div className="space-y-6 mb-12">
-            <h1 className="text-4xl md:text-6xl font-light text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-white leading-tight">
               i build <span className="font-normal">backend systems</span> that don't 
-              <br />
+              <br className="hidden sm:block" />
               crash at 3am when traffic spikes
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-500 font-light max-w-3xl leading-relaxed">
               currently at <span className="text-white">fitpage</span>, making postgresql sing and apis run fast. 
               i write code that scales, debug things that break, and occasionally refactor stuff that works just fine.
             </p>

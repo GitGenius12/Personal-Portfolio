@@ -32,7 +32,7 @@ const About = ({ about }) => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
               About Me
             </h2>
             <div className="w-16 h-0.5 bg-gray-700"></div>

@@ -11,11 +11,11 @@ const Projects = ({ projects }) => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
               Featured Projects
             </h2>
             <div className="w-16 h-0.5 bg-gray-700 mb-4"></div>
-            <p className="text-gray-500 text-lg">Here are some projects I've worked on</p>
+            <p className="text-gray-500 text-sm sm:text-base md:text-lg">Here are some projects I've worked on</p>
           </div>
 
           {/* Projects Grid */}
