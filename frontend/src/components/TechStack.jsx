@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 
 const TechStack = ({ technologies }) => {
@@ -29,31 +28,50 @@ const TechStack = ({ technologies }) => {
               Tech Stack
             </h2>
             <div className="w-16 h-0.5 bg-gray-700 mb-4"></div>
-            <p className="text-gray-500 text-lg">Technologies I work with</p>
+            <p className="text-gray-500 text-lg">technologies i work with</p>
           </div>
 
-          {/* Tech Categories */}
-          <div className="space-y-8">
+          {/* Tech Grid - Simplified */}
+          <div className="space-y-12">
             {Object.entries(groupedTech).map(([category, techs]) => (
-              <Card
-                key={category}
-                className="bg-zinc-950 border-zinc-800 p-6 hover:border-gray-600 transition-all"
-              >
-                <h3 className="text-xl font-semibold text-white mb-4">
+              <div key={category}>
+                <h3 className="text-sm font-medium text-gray-600 mb-4 uppercase tracking-wider">
                   {categories[category]?.title || category}
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {techs.map((tech) => (
-                    <Badge
+                    <span
                       key={tech.name}
-                      className="bg-zinc-900 text-gray-300 border-gray-800 px-4 py-2 text-sm hover:bg-zinc-800 transition-colors cursor-default"
+                      className="px-5 py-2.5 bg-zinc-950 border border-zinc-800 rounded-lg text-gray-300 text-base hover:border-gray-700 hover:bg-zinc-900 transition-all cursor-default"
                     >
                       {tech.name}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
-              </Card>
+              </div>
             ))}
+          </div>
+
+          {/* Summary Stats */}
+          <div className="mt-16 pt-16 border-t border-zinc-900">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <p className="text-3xl font-bold text-white mb-1">18+</p>
+                <p className="text-gray-500 text-sm">Technologies</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-white mb-1">5</p>
+                <p className="text-gray-500 text-sm">Main Stack</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-white mb-1">Backend</p>
+                <p className="text-gray-500 text-sm">Specialization</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-white mb-1">Production</p>
+                <p className="text-gray-500 text-sm">Ready</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
