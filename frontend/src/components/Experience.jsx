@@ -9,11 +9,11 @@ const Experience = ({ experience }) => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Work <span className="text-cyan-400">Experience</span>
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              Work Experience
             </h2>
-            <div className="w-20 h-1 bg-cyan-400 mx-auto"></div>
+            <div className="w-16 h-0.5 bg-gray-700"></div>
           </div>
 
           {/* Timeline */}
@@ -21,13 +21,13 @@ const Experience = ({ experience }) => {
             {experience.map((job, jobIndex) => (
               <Card
                 key={job.id}
-                className="bg-zinc-950 border-zinc-800 p-8 hover:border-cyan-500/50 transition-all"
+                className="bg-zinc-950 border-zinc-800 p-8 hover:border-gray-600 transition-all"
               >
                 {/* Company Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
-                      <Briefcase className="text-cyan-400" size={24} />
+                      <Briefcase className="text-gray-400" size={24} />
                       {job.company}
                     </h3>
                     <p className="text-slate-400 flex items-center gap-2">
@@ -40,7 +40,7 @@ const Experience = ({ experience }) => {
                       <Badge
                         key={tech}
                         variant="outline"
-                        className="border-cyan-500/50 text-cyan-400"
+                        className="border-gray-700 text-gray-400"
                       >
                         {tech}
                       </Badge>
@@ -51,9 +51,9 @@ const Experience = ({ experience }) => {
                 {/* Positions */}
                 <div className="space-y-6">
                   {job.positions.map((position, posIndex) => (
-                    <div key={posIndex} className="border-l-2 border-cyan-500 pl-6">
+                    <div key={posIndex} className="border-l-2 border-gray-700 pl-6">
                       <div className="flex items-center gap-3 mb-3">
-                        <h4 className="text-xl font-semibold text-cyan-400">
+                        <h4 className="text-xl font-semibold text-white">
                           {position.title}
                         </h4>
                         <span className="text-slate-500 flex items-center gap-1 text-sm">
@@ -67,7 +67,7 @@ const Experience = ({ experience }) => {
                             key={achIndex}
                             className="text-slate-300 flex items-start gap-2"
                           >
-                            <span className="text-cyan-400 mt-1.5">•</span>
+                            <span className="text-gray-500 mt-1.5">•</span>
                             <span>{achievement}</span>
                           </li>
                         ))}

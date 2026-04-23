@@ -24,12 +24,12 @@ const TechStack = ({ technologies }) => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Tech <span className="text-cyan-400">Stack</span>
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              Tech Stack
             </h2>
-            <div className="w-20 h-1 bg-cyan-400 mx-auto mb-4"></div>
-            <p className="text-slate-400 text-lg">Technologies I work with</p>
+            <div className="w-16 h-0.5 bg-gray-700 mb-4"></div>
+            <p className="text-gray-500 text-lg">Technologies I work with</p>
           </div>
 
           {/* Tech Categories */}
@@ -37,7 +37,7 @@ const TechStack = ({ technologies }) => {
             {Object.entries(groupedTech).map(([category, techs]) => (
               <Card
                 key={category}
-                className="bg-zinc-950 border-zinc-800 p-6 hover:border-cyan-500/50 transition-all"
+                className="bg-zinc-950 border-zinc-800 p-6 hover:border-gray-600 transition-all"
               >
                 <h3 className="text-xl font-semibold text-white mb-4">
                   {categories[category]?.title || category}
@@ -46,7 +46,7 @@ const TechStack = ({ technologies }) => {
                   {techs.map((tech) => (
                     <Badge
                       key={tech.name}
-                      className="bg-cyan-500/10 text-cyan-400 border-cyan-500/30 px-4 py-2 text-sm hover:bg-cyan-500/20 transition-colors cursor-default"
+                      className="bg-zinc-900 text-gray-300 border-gray-800 px-4 py-2 text-sm hover:bg-zinc-800 transition-colors cursor-default"
                     >
                       {tech.name}
                     </Badge>

@@ -62,12 +62,12 @@ const Contact = ({ personalInfo }) => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Get In <span className="text-cyan-400">Touch</span>
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              Get In Touch
             </h2>
-            <div className="w-20 h-1 bg-cyan-400 mx-auto mb-4"></div>
-            <p className="text-slate-400 text-lg">Feel free to reach out for collaborations or just a friendly chat</p>
+            <div className="w-16 h-0.5 bg-gray-700 mb-4"></div>
+            <p className="text-gray-500 text-lg">Feel free to reach out for collaborations or just a friendly chat</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -78,7 +78,7 @@ const Contact = ({ personalInfo }) => {
                 <h3 className="text-xl font-semibold text-white mb-4">Download Resume</h3>
                 <Button
                   onClick={handleDownloadResume}
-                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white"
+                  className="w-full bg-white hover:bg-gray-200 text-black"
                 >
                   <Download className="mr-2" size={20} />
                   Download CV
@@ -97,7 +97,7 @@ const Contact = ({ personalInfo }) => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 p-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors group"
                     >
-                      <div className="text-cyan-400 group-hover:scale-110 transition-transform">
+                      <div className="text-gray-400 group-hover:scale-110 transition-transform">
                         {social.icon}
                       </div>
                       <div>
@@ -149,7 +149,7 @@ const Contact = ({ personalInfo }) => {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white"
+                  className="w-full bg-white hover:bg-gray-200 text-black"
                 >
                   <Send className="mr-2" size={20} />
                   Send Message

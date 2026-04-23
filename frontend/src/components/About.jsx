@@ -31,11 +31,11 @@ const About = ({ about }) => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              About <span className="text-cyan-400">Me</span>
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              About Me
             </h2>
-            <div className="w-20 h-1 bg-cyan-400 mx-auto"></div>
+            <div className="w-16 h-0.5 bg-gray-700"></div>
           </div>
 
           {/* About Content */}
@@ -52,9 +52,9 @@ const About = ({ about }) => {
               {highlights.map((highlight, index) => (
                 <Card
                   key={index}
-                  className="bg-zinc-950 border-zinc-800 p-6 hover:border-cyan-500/50 transition-all hover:scale-105 group"
+                  className="bg-zinc-950 border-zinc-800 p-6 hover:border-gray-600 transition-all hover:scale-105 group"
                 >
-                  <div className="text-cyan-400 mb-3 group-hover:scale-110 transition-transform">
+                  <div className="text-gray-400 mb-3 group-hover:scale-110 transition-transform">
                     {highlight.icon}
                   </div>
                   <h3 className="text-white font-semibold mb-2">{highlight.title}</h3>

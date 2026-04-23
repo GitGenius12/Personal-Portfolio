@@ -40,7 +40,7 @@ const Header = ({ personalInfo }) => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-white hover:text-cyan-400 transition-colors"
+            className="text-xl font-bold text-white hover:text-gray-300 transition-colors"
           >
             {personalInfo.name.split(' ')[0]}
           </button>
@@ -51,7 +51,7 @@ const Header = ({ personalInfo }) => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-slate-300 hover:text-cyan-400 transition-colors font-medium"
+                className="text-slate-300 hover:text-white transition-colors font-medium"
               >
                 {link.label}
               </button>
@@ -64,7 +64,7 @@ const Header = ({ personalInfo }) => {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-300 hover:text-cyan-400 transition-colors"
+              className="text-slate-300 hover:text-white transition-colors"
             >
               <Github size={20} />
             </a>
@@ -72,7 +72,7 @@ const Header = ({ personalInfo }) => {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-300 hover:text-cyan-400 transition-colors"
+              className="text-slate-300 hover:text-white transition-colors"
             >
               <Linkedin size={20} />
             </a>
@@ -94,7 +94,7 @@ const Header = ({ personalInfo }) => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left text-slate-300 hover:text-cyan-400 transition-colors py-2"
+                className="block w-full text-left text-slate-300 hover:text-white transition-colors py-2"
               >
                 {link.label}
               </button>
@@ -104,7 +104,7 @@ const Header = ({ personalInfo }) => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-300 hover:text-cyan-400 transition-colors"
+                className="text-slate-300 hover:text-white transition-colors"
               >
                 <Github size={20} />
               </a>
@@ -112,7 +112,7 @@ const Header = ({ personalInfo }) => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-300 hover:text-cyan-400 transition-colors"
+                className="text-slate-300 hover:text-white transition-colors"
               >
                 <Linkedin size={20} />
               </a>

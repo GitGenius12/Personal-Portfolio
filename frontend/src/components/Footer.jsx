@@ -16,7 +16,7 @@ const Footer = ({ personalInfo }) => {
           {/* Center - Made with love */}
           <div className="flex items-center gap-2 text-slate-400 text-sm">
             <span>Made with</span>
-            <Heart className="text-cyan-400" size={16} fill="currentColor" />
+            <Heart className="text-gray-400" size={16} fill="currentColor" />
             <span>by {personalInfo.name.split(' ')[0]}</span>
           </div>
 
@@ -26,7 +26,7 @@ const Footer = ({ personalInfo }) => {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
+              className="text-slate-400 hover:text-white transition-colors text-sm"
             >
               GitHub
             </a>
@@ -34,7 +34,7 @@ const Footer = ({ personalInfo }) => {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
+              className="text-slate-400 hover:text-white transition-colors text-sm"
             >
               LinkedIn
             </a>

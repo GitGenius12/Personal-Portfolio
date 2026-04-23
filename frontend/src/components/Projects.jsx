@@ -10,12 +10,12 @@ const Projects = ({ projects }) => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Featured <span className="text-cyan-400">Projects</span>
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              Featured Projects
             </h2>
-            <div className="w-20 h-1 bg-cyan-400 mx-auto mb-4"></div>
-            <p className="text-slate-400 text-lg">Here are some projects I've worked on</p>
+            <div className="w-16 h-0.5 bg-gray-700 mb-4"></div>
+            <p className="text-gray-500 text-lg">Here are some projects I've worked on</p>
           </div>
 
           {/* Projects Grid */}
@@ -23,7 +23,7 @@ const Projects = ({ projects }) => {
             {projects.map((project) => (
               <Card
                 key={project.id}
-                className="bg-zinc-950 border-zinc-800 overflow-hidden hover:border-cyan-500/50 transition-all group hover:scale-105"
+                className="bg-zinc-950 border-zinc-800 overflow-hidden hover:border-gray-600 transition-all group hover:scale-105"
               >
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -48,7 +48,7 @@ const Projects = ({ projects }) => {
                       <Badge
                         key={tech}
                         variant="outline"
-                        className="text-xs border-cyan-500/50 text-cyan-400"
+                        className="text-xs border-gray-700 text-gray-400"
                       >
                         {tech}
                       </Badge>
@@ -60,7 +60,7 @@ const Projects = ({ projects }) => {
                     <Button
                       asChild
                       size="sm"
-                      className="bg-cyan-500 hover:bg-cyan-600 text-white flex-1"
+                      className="bg-white hover:bg-gray-200 text-black flex-1"
                     >
                       <a
                         href={project.github}
@@ -69,7 +69,7 @@ const Projects = ({ projects }) => {
                         className="flex items-center justify-center gap-2"
                       >
                         <Github size={16} />
-                        Code
+                        View Code
                       </a>
                     </Button>
                   </div>
