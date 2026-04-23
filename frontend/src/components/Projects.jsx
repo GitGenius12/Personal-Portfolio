@@ -6,7 +6,7 @@ import { Badge } from './ui/badge';
 
 const Projects = ({ projects }) => {
   return (
-    <section id="projects" className="py-20 bg-slate-900">
+    <section id="projects" className="py-20 bg-black border-t border-zinc-900">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -23,7 +23,7 @@ const Projects = ({ projects }) => {
             {projects.map((project) => (
               <Card
                 key={project.id}
-                className="bg-slate-800/50 border-slate-700 overflow-hidden hover:border-cyan-500/50 transition-all group hover:scale-105"
+                className="bg-zinc-950 border-zinc-800 overflow-hidden hover:border-cyan-500/50 transition-all group hover:scale-105"
               >
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -32,7 +32,7 @@ const Projects = ({ projects }) => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                 </div>
 
                 {/* Project Content */}

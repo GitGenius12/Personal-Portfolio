@@ -27,7 +27,7 @@ const About = ({ about }) => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-slate-800">
+    <section id="about" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -52,7 +52,7 @@ const About = ({ about }) => {
               {highlights.map((highlight, index) => (
                 <Card
                   key={index}
-                  className="bg-slate-900/50 border-slate-700 p-6 hover:border-cyan-500/50 transition-all hover:scale-105 group"
+                  className="bg-zinc-950 border-zinc-800 p-6 hover:border-cyan-500/50 transition-all hover:scale-105 group"
                 >
                   <div className="text-cyan-400 mb-3 group-hover:scale-110 transition-transform">
                     {highlight.icon}

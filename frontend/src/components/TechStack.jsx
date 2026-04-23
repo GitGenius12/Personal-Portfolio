@@ -20,7 +20,7 @@ const TechStack = ({ technologies }) => {
   }, {});
 
   return (
-    <section id="tech-stack" className="py-20 bg-slate-800">
+    <section id="tech-stack" className="py-20 bg-black border-t border-zinc-900">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -37,7 +37,7 @@ const TechStack = ({ technologies }) => {
             {Object.entries(groupedTech).map(([category, techs]) => (
               <Card
                 key={category}
-                className="bg-slate-900/50 border-slate-700 p-6 hover:border-cyan-500/50 transition-all"
+                className="bg-zinc-950 border-zinc-800 p-6 hover:border-cyan-500/50 transition-all"
               >
                 <h3 className="text-xl font-semibold text-white mb-4">
                   {categories[category]?.title || category}

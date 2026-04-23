@@ -5,7 +5,7 @@ import { Badge } from './ui/badge';
 
 const Experience = ({ experience }) => {
   return (
-    <section id="experience" className="py-20 bg-slate-900">
+    <section id="experience" className="py-20 bg-black border-t border-zinc-900">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
@@ -21,7 +21,7 @@ const Experience = ({ experience }) => {
             {experience.map((job, jobIndex) => (
               <Card
                 key={job.id}
-                className="bg-slate-800/50 border-slate-700 p-8 hover:border-cyan-500/50 transition-all"
+                className="bg-zinc-950 border-zinc-800 p-8 hover:border-cyan-500/50 transition-all"
               >
                 {/* Company Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">

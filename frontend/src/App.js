@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App bg-slate-900">
+    <div className="App bg-black">
       <Header personalInfo={portfolioData.personalInfo} />
       <Hero personalInfo={portfolioData.personalInfo} />
       <About about={portfolioData.about} />

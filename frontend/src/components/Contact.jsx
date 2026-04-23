@@ -58,7 +58,7 @@ const Contact = ({ personalInfo }) => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-slate-800">
+    <section id="contact" className="py-20 bg-black border-t border-zinc-900">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
@@ -74,7 +74,7 @@ const Contact = ({ personalInfo }) => {
             {/* Left - Contact Info & Social */}
             <div className="space-y-6">
               {/* Download Resume Card */}
-              <Card className="bg-slate-900/50 border-slate-700 p-6">
+              <Card className="bg-zinc-950 border-zinc-800 p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Download Resume</h3>
                 <Button
                   onClick={handleDownloadResume}
@@ -86,7 +86,7 @@ const Contact = ({ personalInfo }) => {
               </Card>
 
               {/* Social Links */}
-              <Card className="bg-slate-900/50 border-slate-700 p-6">
+              <Card className="bg-zinc-950 border-zinc-800 p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Connect With Me</h3>
                 <div className="space-y-4">
                   {socialLinks.map((social) => (
@@ -95,7 +95,7 @@ const Contact = ({ personalInfo }) => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 transition-colors group"
+                      className="flex items-center gap-4 p-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors group"
                     >
                       <div className="text-cyan-400 group-hover:scale-110 transition-transform">
                         {social.icon}
@@ -111,7 +111,7 @@ const Contact = ({ personalInfo }) => {
             </div>
 
             {/* Right - Contact Form */}
-            <Card className="bg-slate-900/50 border-slate-700 p-6">
+            <Card className="bg-zinc-950 border-zinc-800 p-6">
               <h3 className="text-xl font-semibold text-white mb-4">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -122,7 +122,7 @@ const Contact = ({ personalInfo }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                    className="bg-zinc-900 border-zinc-800 text-white placeholder:text-slate-500"
                   />
                 </div>
                 <div>
@@ -133,7 +133,7 @@ const Contact = ({ personalInfo }) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                    className="bg-zinc-900 border-zinc-800 text-white placeholder:text-slate-500"
                   />
                 </div>
                 <div>
@@ -144,7 +144,7 @@ const Contact = ({ personalInfo }) => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                    className="bg-zinc-900 border-zinc-800 text-white placeholder:text-slate-500"
                   />
                 </div>
                 <Button
