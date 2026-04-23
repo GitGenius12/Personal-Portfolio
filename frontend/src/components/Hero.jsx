@@ -24,14 +24,14 @@ const Hero = ({ personalInfo }) => {
           {/* Main Content */}
           <div className="space-y-6 mb-12">
             <h1 className="text-4xl md:text-6xl font-light text-white leading-tight">
-              i build <span className="font-normal">scalable backend systems</span>
+              i build <span className="font-normal">backend systems</span> that don't 
               <br />
-              that actually work in production
+              crash at 3am when traffic spikes
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl">
-              software engineer at <span className="text-white">fitpage</span>, optimizing postgresql databases and designing high-performance apis. 
-              i enjoy solving complex problems and shipping reliable code.
+              currently at <span className="text-white">fitpage</span>, making postgresql sing and apis run fast. 
+              i write code that scales, debug things that break, and occasionally refactor stuff that works just fine.
             </p>
           </div>
 
