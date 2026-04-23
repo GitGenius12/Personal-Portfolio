@@ -40,9 +40,9 @@ const Header = ({ personalInfo }) => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-white hover:text-gray-300 transition-colors"
+            className="text-lg font-medium text-white hover:text-gray-300 transition-colors"
           >
-            {personalInfo.name.split(' ')[0]}
+            {personalInfo.name}
           </button>
 
           {/* Desktop Navigation */}

@@ -11,49 +11,65 @@ const Hero = ({ personalInfo }) => {
   };
 
   const handleDownloadResume = () => {
-    // Mock download functionality
     window.open(personalInfo.resumeUrl, '_blank');
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
+    <section id="hero" className="min-h-screen flex items-center justify-start relative overflow-hidden bg-black">
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl">
-          {/* Name */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white tracking-tight">
-            {personalInfo.name}
-          </h1>
+          {/* Greeting */}
+          <p className="text-gray-500 text-lg mb-8 font-light">hey there 👋</p>
 
-          {/* Role & Tagline */}
-          <div className="space-y-4 mb-12">
-            <p className="text-xl md:text-2xl text-gray-400 font-light">
-              {personalInfo.role}
-            </p>
-            <p className="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed">
-              {personalInfo.tagline}
+          {/* Main Content */}
+          <div className="space-y-6 mb-12">
+            <h1 className="text-4xl md:text-6xl font-light text-white leading-tight">
+              i build <span className="font-normal">scalable backend systems</span>
+              <br />
+              that actually work in production
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl">
+              software engineer at <span className="text-white">fitpage</span>, optimizing postgresql databases and designing high-performance apis. 
+              i enjoy solving complex problems and shipping reliable code.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-wrap gap-4">
             <Button
               onClick={() => scrollToSection('projects')}
               size="lg"
-              variant="outline"
-              className="border-gray-700 text-white hover:bg-white hover:text-black px-8 py-6 text-base transition-all"
+              className="bg-white hover:bg-gray-200 text-black px-6 py-5 text-base font-medium"
             >
-              View Work
+              view work
               <ArrowRight className="ml-2" size={18} />
             </Button>
             <Button
               onClick={handleDownloadResume}
               size="lg"
               variant="outline"
-              className="border-gray-700 text-white hover:bg-white hover:text-black px-8 py-6 text-base transition-all"
+              className="border-gray-800 text-gray-400 hover:text-white hover:border-gray-600 px-6 py-5 text-base font-medium"
             >
               <Download className="mr-2" size={18} />
-              Resume
+              resume
             </Button>
+            <Button
+              onClick={() => scrollToSection('contact')}
+              size="lg"
+              variant="ghost"
+              className="text-gray-400 hover:text-white px-6 py-5 text-base font-medium"
+            >
+              let's talk →
+            </Button>
+          </div>
+
+          {/* Quick Stats/Tags */}
+          <div className="mt-16 flex flex-wrap gap-3">
+            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">nestjs</span>
+            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">postgresql</span>
+            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">node.js</span>
+            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">typescript</span>
           </div>
 
           {/* Scroll indicator */}
