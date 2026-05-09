@@ -22,28 +22,32 @@ const PREVIEW_LENGTH = 110;
 
 const ProjectModal = ({ project, onClose }) => (
   <div
-    className="fixed inset-0 z-50 flex items-center justify-center p-4"
+    className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
     onClick={onClose}
   >
     {/* Backdrop */}
     <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
 
-    {/* Modal */}
+    {/* Modal — slides up from bottom on mobile, centered on sm+ */}
     <div
-      className="relative bg-zinc-950 border border-white/10 rounded-2xl max-w-lg w-full p-7 shadow-2xl"
+      className="relative bg-zinc-950 border border-white/10 rounded-t-2xl sm:rounded-2xl max-w-lg w-full p-5 sm:p-7 shadow-2xl"
       onClick={e => e.stopPropagation()}
     >
+      {/* Drag handle for mobile */}
+      <div className="sm:hidden w-10 h-1 bg-white/20 rounded-full mx-auto mb-4" />
+
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-zinc-600 hover:text-white transition-colors"
+        className="absolute top-4 right-4 text-zinc-600 hover:text-white transition-colors p-1"
+        aria-label="Close"
       >
         <CloseIcon />
       </button>
 
-      <h3 className="text-xl font-bold text-white mb-4">{project.title}</h3>
-      <p className="text-zinc-400 text-sm leading-relaxed mb-6">{project.description}</p>
+      <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 pr-8">{project.title}</h3>
+      <p className="text-zinc-400 text-sm leading-relaxed mb-5 sm:mb-6">{project.description}</p>
 
-      <div className="flex flex-wrap gap-1.5 mb-5">
+      <div className="flex flex-wrap gap-1.5 mb-4 sm:mb-5">
         {project.technologies.map(tech => (
           <span key={tech} className="px-2.5 py-0.5 rounded-full text-xs text-zinc-500 border border-white/8 font-mono">
             {tech}
@@ -70,22 +74,22 @@ const Projects = ({ projects }) => {
   const [modal, setModal] = useState(null);
 
   return (
-    <section id="projects" className="py-20 sm:py-28 bg-black border-t border-zinc-900">
-      <div className="container mx-auto px-3 sm:px-4">
+    <section id="projects" className="py-16 sm:py-20 md:py-28 bg-black border-t border-zinc-900">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
 
           {/* Section Header */}
-          <p className="text-gray-500 text-sm font-mono tracking-widest mb-4">
+          <p className="text-gray-500 text-xs sm:text-sm font-mono tracking-widest mb-3 sm:mb-4">
             <span className="text-gray-600">// </span>PROJECTS
           </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 leading-tight">
             Things I've Built.
           </h2>
-          <p className="text-gray-500 text-lg mb-16">
+          <p className="text-gray-500 text-base sm:text-lg mb-10 sm:mb-16">
             A selection of projects across backend systems, AI tools, and web apps.
           </p>
 
-          {/* Projects Grid */}
+          {/* Projects Grid — 1 col mobile, 2 col sm, 3 col lg */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
             {projects.map((project, i) => {
               const isLong = project.description.length > PREVIEW_LENGTH;
@@ -96,7 +100,7 @@ const Projects = ({ projects }) => {
               return (
                 <div
                   key={project.id}
-                  className="relative bg-black p-8 flex flex-col gap-5 group transition-colors duration-200 hover:bg-zinc-950"
+                  className="relative bg-black p-5 sm:p-8 flex flex-col gap-4 sm:gap-5 group transition-colors duration-200 hover:bg-zinc-950"
                 >
                   {/* Number */}
                   <span className="text-xs font-mono text-zinc-700 tracking-widest">
@@ -104,7 +108,7 @@ const Projects = ({ projects }) => {
                   </span>
 
                   {/* Image */}
-                  <div className="relative h-56 rounded-xl overflow-hidden bg-zinc-900">
+                  <div className="relative h-44 sm:h-56 rounded-xl overflow-hidden bg-zinc-900">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -115,7 +119,7 @@ const Projects = ({ projects }) => {
 
                   {/* Title row */}
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-lg font-bold text-white leading-tight">{project.title}</h3>
+                    <h3 className="text-base sm:text-lg font-bold text-white leading-tight">{project.title}</h3>
                     {project.github && (
                       <a
                         href={project.github}

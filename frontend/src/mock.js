@@ -24,7 +24,7 @@ export const portfolioData = {
           period: "Jun 2025 – Present",
           achievements: [
             "Designed and implemented low-latency, high-throughput backend services for high-traffic applications with a strong focus on scalability, reliability, and security.",
-            "Optimized SQL queries, indexes, and joins across critical PostgreSQL services, significantly reducing API response times and improving system efficiency.",
+            "Developed the backend architecture for RunBuddy, an AI-powered RAG chatbot within the IndiaRunning app, enabling contextual query processing using race, event, and training data.",
             "Collaborated in Agile sprints with product managers and business stakeholders to deliver customer-facing features with measurable performance improvements."
           ]
         },

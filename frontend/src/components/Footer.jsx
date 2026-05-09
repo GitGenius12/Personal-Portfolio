@@ -4,13 +4,13 @@ const Footer = ({ personalInfo }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-zinc-900 py-6 sm:py-8">
-      <div className="container mx-auto px-3 sm:px-4">
+    <footer className="bg-black border-t border-zinc-900 py-5 sm:py-6 md:py-8">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between sm:gap-4">
-          <div className="text-slate-500 text-xs sm:text-sm">
+          <div className="text-slate-500 text-xs sm:text-sm text-center sm:text-left">
             © {currentYear} {personalInfo.name}. All rights reserved.
           </div>
-          <div className="flex gap-5 sm:gap-6">
+          {/* <div className="flex gap-5 sm:gap-6">
             <a
               href={personalInfo.github}
               target="_blank"
@@ -27,7 +27,7 @@ const Footer = ({ personalInfo }) => {
             >
               LinkedIn
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

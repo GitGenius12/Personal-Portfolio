@@ -16,53 +16,53 @@ const About = ({ about }) => {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-28 bg-black">
-      <div className="container mx-auto px-3 sm:px-4">
+    <section id="about" className="py-16 sm:py-20 md:py-28 bg-black">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
 
           {/* Section label */}
-          <p className="text-gray-500 text-sm font-mono tracking-widest mb-4">
+          <p className="text-gray-500 text-xs sm:text-sm font-mono tracking-widest mb-3 sm:mb-4">
             <span className="text-gray-600">// </span>ABOUT
           </p>
 
           {/* Heading */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
+          <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 leading-tight">
             Engineering Systems<br className="hidden sm:block" /> That Scale.
           </h2>
 
           {/* Subtitle */}
-          <p className="text-gray-500 text-lg mb-16">
+          <p className="text-gray-500 text-lg sm:text-lg mb-10 sm:mb-16">
             Not just code that works — systems built to last.
           </p>
 
-          {/* Two-column content */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+          {/* Two-column content — stacks on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start">
 
             {/* Left — Paragraphs */}
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               {paragraphs.map((p, i) => (
-                <p key={i} className="text-gray-400 text-base sm:text-lg leading-relaxed">
+                <p key={i} className="text-gray-400 text-base sm:text-base md:text-lg leading-relaxed">
                   {p}
                 </p>
               ))}
             </div>
 
             {/* Right — Stat cards 2x2 */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {STATS.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-xl border border-white/8 bg-white/3 p-6 flex flex-col items-center justify-center text-center"
+                  className="rounded-xl border border-white/8 bg-white/3 p-4 sm:p-6 flex flex-col items-center justify-center text-center"
                 >
                   <span
-                    className="text-3xl sm:text-4xl font-bold mb-2"
+                    className="text-3xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2"
                     style={{
                       color: '#ffffff',
                     }}
                   >
                     {stat.value}
                   </span>
-                  <span className="text-xs text-zinc-500 uppercase tracking-widest font-mono">
+                  <span className="text-xs text-zinc-500 uppercase tracking-widest font-mono leading-tight">
                     {stat.label}
                   </span>
                 </div>

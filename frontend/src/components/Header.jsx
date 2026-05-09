@@ -56,7 +56,7 @@ const Header = ({ personalInfo }) => {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
           <div className="flex items-center justify-between">
 
             {/* Logo */}
@@ -64,10 +64,9 @@ const Header = ({ personalInfo }) => {
               onClick={() => scrollToSection('hero')}
               className="group flex items-center gap-2"
             >
-              <span className="text-xl font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
+              <span className="text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
                 MM
               </span>
-
             </button>
 
             {/* Desktop Navigation — pill style */}
@@ -91,7 +90,7 @@ const Header = ({ personalInfo }) => {
               </div>
             </nav>
 
-            {/* Right side */}
+            {/* Right side — desktop social icons */}
             <div className="hidden md:flex items-center gap-3">
               <a
                 href={personalInfo.github}
@@ -115,9 +114,10 @@ const Header = ({ personalInfo }) => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-zinc-400 hover:text-white transition-colors p-1"
+              className="md:hidden text-zinc-400 hover:text-white transition-colors p-2 -mr-1 touch-manipulation"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -125,25 +125,39 @@ const Header = ({ personalInfo }) => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-white/8">
-              <nav className="flex flex-col mt-3 gap-1">
+            <div className="md:hidden mt-3 pb-4 border-t border-white/8">
+              <nav className="flex flex-col mt-3 gap-0.5">
                 {navLinks.map((link) => (
                   <button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
-                    className="text-left text-zinc-400 hover:text-white transition-colors py-2.5 px-3 rounded-lg hover:bg-white/5 text-sm font-medium"
+                    className={`text-left transition-colors py-3 px-3 rounded-lg text-sm font-medium touch-manipulation ${
+                      activeSection === link.id
+                        ? 'bg-white/10 text-white'
+                        : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                    }`}
                   >
                     {link.label}
                   </button>
                 ))}
               </nav>
-              <div className="flex gap-3 pt-4 px-3">
-                <a href={personalInfo.github} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 text-zinc-500 hover:text-white transition-all">
+              <div className="flex gap-3 pt-4 px-3 border-t border-white/5 mt-3">
+                <a
+                  href={personalInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 text-zinc-500 hover:text-white transition-all"
+                  aria-label="GitHub"
+                >
                   <GithubIcon />
                 </a>
-                <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 text-zinc-500 hover:text-white transition-all">
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 text-zinc-500 hover:text-white transition-all"
+                  aria-label="LinkedIn"
+                >
                   <LinkedinIcon />
                 </a>
               </div>
