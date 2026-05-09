@@ -1,89 +1,91 @@
 import React from 'react';
-import { ArrowRight, Download } from 'lucide-react';
-import { Button } from './ui/button';
 
 const Hero = ({ personalInfo }) => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleDownloadResume = () => {
-    window.open(personalInfo.resumeUrl, '_blank');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-start relative overflow-hidden bg-black">
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="max-w-4xl">
-          {/* Greeting */}
-          <p className="text-gray-500 text-lg mb-8 font-light">hey there 👋</p>
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
+    >
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto py-32">
 
-          {/* Main Content */}
-          <div className="space-y-6 mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-white leading-tight">
-              i build <span className="font-normal">backend systems</span> that don't 
-              <br className="hidden sm:block" />
-              crash at 3am when traffic spikes
-            </h1>
-            
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-500 font-light max-w-3xl leading-relaxed">
-              currently at <span className="text-white">fitpage</span>, making postgresql sing and apis run fast. 
-              i write code that scales, debug things that break, and occasionally refactor stuff that works just fine.
-            </p>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4">
-            <Button
-              onClick={() => scrollToSection('projects')}
-              size="lg"
-              className="bg-white hover:bg-gray-200 text-black px-6 py-5 text-base font-medium"
-            >
-              view work
-              <ArrowRight className="ml-2" size={18} />
-            </Button>
-            <Button
-              onClick={handleDownloadResume}
-              size="lg"
-              variant="outline"
-              className="border-gray-800 text-gray-400 hover:text-white hover:border-gray-600 px-6 py-5 text-base font-medium"
-            >
-              <Download className="mr-2" size={18} />
-              resume
-            </Button>
-            <Button
-              onClick={() => scrollToSection('contact')}
-              size="lg"
-              variant="ghost"
-              className="text-gray-400 hover:text-white px-6 py-5 text-base font-medium"
-            >
-              let's talk →
-            </Button>
-          </div>
-
-          {/* Quick Stats/Tags */}
-          <div className="mt-16 flex flex-wrap gap-3">
-            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">nestjs</span>
-            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">postgresql</span>
-            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">node.js</span>
-            <span className="px-4 py-2 border border-gray-800 rounded-full text-gray-500 text-sm">typescript</span>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="mt-32">
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-gray-600 hover:text-gray-400 transition-colors"
-            >
-              <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </button>
-          </div>
+        {/* Available badge */}
+        <div className="flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/5">
+          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+          <span className="text-base text-gray-300 font-medium">Available for new projects</span>
         </div>
+
+        {/* Name */}
+        <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-6 leading-none">
+          <span className="text-white">Margesh </span>
+          <span className="text-gray-400">
+            Modi
+          </span>
+        </h1>
+
+        {/* Role */}
+        <p className="text-gray-500 text-base uppercase tracking-widest mb-4 font-medium">
+          Software Engineer
+        </p>
+
+        {/* Tagline */}
+        <p className="text-gray-300 text-xl sm:text-2xl font-light leading-relaxed max-w-4xl mb-10">
+          {personalInfo.tagline}
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
+          <button
+            onClick={() => scrollToSection('projects')}
+            className="px-7 py-3.5 rounded-lg font-semibold text-base text-black bg-white hover:bg-gray-200 transition-all duration-200 hover:opacity-90 active:scale-95"
+          >
+            View Projects
+          </button>
+
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="px-7 py-3.5 rounded-lg font-medium text-base text-gray-300 hover:text-white transition-colors duration-200 border border-white/10 hover:border-white/25"
+          >
+            Get in Touch
+          </button>
+
+          <a
+            href={personalInfo.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-11 h-11 rounded-lg border border-white/10 hover:border-white/25 text-gray-400 hover:text-white transition-all duration-200"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-11 h-11 rounded-lg border border-white/10 hover:border-white/25 text-gray-400 hover:text-white transition-all duration-200"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+
+        {/* Scroll down arrow */}
+        <button
+          onClick={() => scrollToSection('about')}
+          className="text-gray-600 hover:text-gray-400 transition-colors p-2"
+          aria-label="Scroll down"
+        >
+          <svg className="w-7 h-7 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </button>
+
       </div>
     </section>
   );

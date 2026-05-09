@@ -1,67 +1,74 @@
 import React from 'react';
-import { Code2, Database, Server, Zap } from 'lucide-react';
-import { Card } from './ui/card';
+
+const STATS = [
+  { value: '2+', label: 'Years Experience' },
+  { value: '10+', label: 'Projects Shipped' },
+  { value: '2',  label: 'Companies' },
+  { value: '∞',  label: 'Bugs Fixed' },
+];
 
 const About = ({ about }) => {
-  const highlights = [
-    {
-      icon: <Server className="w-8 h-8" />,
-      title: 'Backend Architecture',
-      description: 'Scalable & high-performance systems'
-    },
-    {
-      icon: <Database className="w-8 h-8" />,
-      title: 'Database Optimization',
-      description: 'SQL query tuning & indexing'
-    },
-    {
-      icon: <Code2 className="w-8 h-8" />,
-      title: 'Clean Code',
-      description: 'Maintainable & efficient solutions'
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Performance',
-      description: 'Low-latency, high-throughput APIs'
-    }
+  // Split the description into 3 paragraphs for readability
+  const paragraphs = [
+    "I'm Margesh Modi, a software engineer focused on backend systems — designing APIs, optimizing databases, and building infrastructure that holds up under real production load.",
+    "At Fitpage, I design and optimize production APIs and PostgreSQL databases for high-traffic applications. I've led performance-critical improvements that directly impacted user growth and revenue.",
+    "I enjoy taking ownership of problems from design to deployment — writing clean, efficient code and building systems that scale reliably in real-world conditions.",
   ];
 
   return (
-    <section id="about" className="py-20 bg-black">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
-              About Me
-            </h2>
-            <div className="w-16 h-0.5 bg-gray-700"></div>
-          </div>
+    <section id="about" className="py-20 sm:py-28 bg-black">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="max-w-7xl mx-auto">
 
-          {/* About Content */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left - Description */}
-            <div>
-              <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                {about.description}
-              </p>
-            </div>
+          {/* Section label */}
+          <p className="text-gray-500 text-sm font-mono tracking-widest mb-4">
+            <span className="text-gray-600">// </span>ABOUT
+          </p>
 
-            {/* Right - Highlights Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {highlights.map((highlight, index) => (
-                <Card
-                  key={index}
-                  className="bg-zinc-950 border-zinc-800 p-6 hover:border-gray-600 transition-all hover:scale-105 group"
-                >
-                  <div className="text-gray-400 mb-3 group-hover:scale-110 transition-transform">
-                    {highlight.icon}
-                  </div>
-                  <h3 className="text-white font-semibold mb-2">{highlight.title}</h3>
-                  <p className="text-slate-400 text-sm">{highlight.description}</p>
-                </Card>
+          {/* Heading */}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
+            Engineering Systems<br className="hidden sm:block" /> That Scale.
+          </h2>
+
+          {/* Subtitle */}
+          <p className="text-gray-500 text-lg mb-16">
+            Not just code that works — systems built to last.
+          </p>
+
+          {/* Two-column content */}
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+
+            {/* Left — Paragraphs */}
+            <div className="space-y-5">
+              {paragraphs.map((p, i) => (
+                <p key={i} className="text-gray-400 text-base sm:text-lg leading-relaxed">
+                  {p}
+                </p>
               ))}
             </div>
+
+            {/* Right — Stat cards 2x2 */}
+            <div className="grid grid-cols-2 gap-4">
+              {STATS.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-xl border border-white/8 bg-white/3 p-6 flex flex-col items-center justify-center text-center"
+                >
+                  <span
+                    className="text-3xl sm:text-4xl font-bold mb-2"
+                    style={{
+                      color: '#ffffff',
+                    }}
+                  >
+                    {stat.value}
+                  </span>
+                  <span className="text-xs text-zinc-500 uppercase tracking-widest font-mono">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>
