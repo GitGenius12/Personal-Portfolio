@@ -2,7 +2,7 @@ export const portfolioData = {
   personalInfo: {
     name: "Margesh Modi",
     role: "Software Engineer",
-    tagline: "Curious, self-driven, and always eager to learn, experiment, and take ownership of what I build.",
+    tagline: "Passion for building impactful products, obsession with improvement.",
     resumeUrl: "https://drive.google.com/file/d/1MiY0Y_JDCSMSwJxeHr6Gwe5bfOcpwDNm/view?usp=sharing",
     github: "https://github.com/Margesh06",
     linkedin: "https://www.linkedin.com/in/margesh-modi-a7a184228/",
