@@ -15,10 +15,10 @@ const Hero = ({ personalInfo }) => {
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto py-16 sm:py-32">
 
         {/* Available badge */}
-        <div className="flex items-center gap-2 mb-6 sm:mb-8 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5">
+        {/* <div className="flex items-center gap-2 mb-6 sm:mb-8 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           <span className="text-sm sm:text-base text-gray-300 font-medium">Available for new projects</span>
-        </div>
+        </div> */}
 
         {/* Name */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 sm:mb-6 leading-none">
